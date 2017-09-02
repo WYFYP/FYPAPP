@@ -1,0 +1,45 @@
+<ion-view view-title="View Title"  hide-tabs="true" >
+    <ion-content class="padding">
+        <ion-refresher pulling-text="下拉刷新" on-refresh="research()" style="height:1px"></ion-refresher>
+        <ion-infinite-scroll ng-if="loadMoreIf" immediate-check="false" on-infinite="refresh()" distance="10%" style="height:1px"></ion-infinite-scroll>
+        <div class="card" style="text-align:center;">
+            <div class="item item-text-wrap .col-center ">
+                <img src="{{apiHost}}/static/img/user.jpg" style="border-radius: 50%;width:120px;">
+            </div>
+            <div class="item item-text-wrap">
+                User Name
+            </div>
+        </div>
+        <div class="card">
+            <div class="item ">
+                <div class="button-bar bar-light">
+                    <button class="button " ng-if="type=='create'" ng-click="changeType('join')">
+                            public
+                    </button>
+                    <button class="button button-stable" ng-if="type=='join'" ng-click="changeType('join')">
+                            public
+                    </button>
+                    <button class="button button-stable"  ng-if="type=='create'" ng-click="changeType('create')">
+                           join
+                    </button>
+                    <button class="button "  ng-if="type=='join'" ng-click="changeType('create')">
+                            join
+                     </button>
+                </div>
+            </div>
+        </div>
+        <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+            <ion-item ng-repeat="item in items" item="item" href="#/tab/discover/event/{{item.id}}" class="item-thumbnail-left item-remove-animate">
+                <img src="{{apiHost}}{{item.avatar}}">
+                <h2>Title:{{item.id}}==>{{item.title}}</h2>
+                <h2>Location:{{item.location}}</h2>
+                <h2>Date:{{item.date}}</h2>
+                <p>
+                    <i class="icon ion-ios-heart"> {{item.like}} </i>
+                    <i class="icon ion-flame"> {{item.join}} /  {{item.max}}  </i>
+                </p>
+
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

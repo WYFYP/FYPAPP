@@ -1,0 +1,45 @@
+<ion-view view-title="Event Info" hide-tabs="true" >
+    <ion-content class="padding">
+        <div class="list card">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">category</span>
+                <input type="text" placeholder=""  ng-model="data.category" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">title</span>
+                <input type="text" placeholder=""  ng-model="data.title" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">organizer</span>
+                <input type="text" placeholder="" ng-model="data.organizer" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">location</span>
+                <input type="text" placeholder="" ng-model="data.location" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Date and Time</span>
+                <input type="text" placeholder="" ng-model="data.start" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Participant No</span>
+                <input type="text" placeholder="" ng-model="data.max" readonly>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Description</span>
+                <textarea placeholder="Description" ng-model="data.description" readonly></textarea>
+            </label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive" ng-if="state.like != 1" ng-click="updateState('like','1')">Like</button>
+            <button class="button button-block button-positive" ng-if="state.like == 1" ng-click="updateState('like','0')">unLike</button>
+
+            <button class="button button-block button-positive" ng-if="state.join != 1" ng-click="updateState('join','1')">join</button>
+            <button class="button button-block button-positive" ng-if="state.join == 1" ng-click="updateState('join','0')">exit</button>
+            
+            <button class="button button-block button-positive" ng-if="state.chat != 1" ng-click="updateState('chat','1')">chat</button>
+            <button class="button button-block button-positive" ng-if="state.chat == 1" ng-click="updateState('chat','0')">unchat</button>
+           
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view view-title="Login" align-title="left" hide-nav-bar="true">
+    <ion-content>
+
+
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Username</span>
+                <input type="text" placeholder="Email" ng-model="data.username" >
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Password</span>
+                <input type="text" value="" ng-model="data.password" type="password" > 
+            </label>
+
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive" ng-click="login()">Login</button>
+            <a class="button button-light button-block button-clear" href="#/regist">Or create an account</a>
+        </div>
+
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,31 @@
+<ion-view title="My">
+    <ion-content>
+        <div class="card" style="text-align:center;">
+
+
+            <div class="item item-text-wrap .col-center ">
+                <img src="static/img/user.jpg" style="border-radius: 50%;width:120px;">
+            </div>
+            <div class="item item-text-wrap">
+                <span ng-bind="info.nickname"></span>
+            </div>
+
+            <div class="item item-text-wrap">
+                <a class="button button-positive" href="#/tab/following">Following</a>
+                <a class="button button-positive" href="#/tab/follower">Follower</a>
+            </div>
+
+            <div class="item item-text-wrap">
+                <a class="button button-positive" href="#/tab/user/myevent">My Event</a>
+            </div>            
+
+            <div class="item item-text-wrap">
+                <a class="button button-positive" href="#/tab/myfavorite">My Favorite</a>
+            </div>
+
+            <div class="">
+                <button class="button button-block button-positive" ng-click="logout()">Logout</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

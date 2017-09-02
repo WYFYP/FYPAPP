@@ -1,0 +1,36 @@
+<ion-view view-title="Discover">
+    <ion-content class="padding">
+        <ion-refresher pulling-text="下拉刷新" on-refresh="research()"></ion-refresher>
+        <ion-infinite-scroll ng-if="loadMoreIf" immediate-check="false" on-infinite="refresh()" distance="10%" style="height:1px"></ion-infinite-scroll>
+        <div class="card">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="kw" ng-change="research(kw)">
+            </label>
+            <div class="item ">
+                <div class="button-bar bar-light">
+                    <button class="button" ng-click="showCategory()">
+                        Category:{{category}}
+                    </button>
+                    <button class="button" ng-click="showOrder()">
+                        Order:{{order}}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+            <ion-item ng-repeat="item in items" item="item" href="#/tab/discover/event/{{item.id}}" class="item-thumbnail-left item-remove-animate">
+                <img src="{{apiHost}}{{item.avatar}}">
+                <h2>Title:{{item.id}}==>{{item.title}}</h2>
+                <h2>Location:{{item.location}}</h2>
+                <h2>Date:{{item.date}}</h2>
+                <p>
+                    <i class="icon ion-ios-heart"> {{item.like}} </i>
+                    <i class="icon ion-flame"> {{item.join}} /  {{item.max}}  </i>
+                </p>
+              
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

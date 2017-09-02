@@ -1,0 +1,31 @@
+<ion-view view-title="Chatting" hide-tabs="true">
+    <ion-content delegate-handle="mainScroll">
+        <ion-list class="list">
+            <i ng-repeat="item in items" item="item" class="item item-icon-left" style="white-space: normal;">
+                <i class="icon ">
+                        <img src="{{apiHost}}{{item.avatar || '/static/img/user.jpg'}}" style="width:30px; border-radius: 50%;"> 
+                </i>
+                "{{item.nick}}" Say:
+                </br>
+                {{item.msg}}
+            </i>
+            <i class="item item-icon-left" style="height:60px">
+                <i class="icon "></i>
+            </i>
+
+        </ion-list>
+
+
+
+    </ion-content>
+    <div style="position: absolute;  width: 100%;top: 0px;">
+        <div class="item item-input-inset" style="position: fixed;width: 100%;bottom: 0px;">
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="typing..." ng-model="msg">
+            </label>
+            <button class="button button-small" ng-click="send()">
+                Send
+            </button>
+        </div>
+    </div>
+</ion-view>

@@ -1,0 +1,22 @@
+ <ion-view view-title="following">
+            <ion-content class="padding">
+                <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+                <div class="card">
+                    <label class="item item-input">
+                        <i class="icon ion-search placeholder-icon"></i>
+                        <input type="text" placeholder="Search">
+                    </label>
+                </div>
+                 <div class="list card">
+                    <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+                        <ion-item ng-repeat="item in items" item="item" href="#/tab/userinfo?eid={{item.id}}"  class="item-thumbnail-left  item-remove-animate">
+                            <img src="{{apiHost}}{{item.avatar}}" style="border-radius: 50%;">
+                            <h2>Name:{{item.nickname}}</h2>
+                            <button class="button button-small button-outline button-positive" ng-click="unFollow(item)"  >
+                                    unFollow
+                            </button>
+                        </ion-item>
+                    </ion-list>
+                </div>
+            </ion-content>
+        </ion-view>

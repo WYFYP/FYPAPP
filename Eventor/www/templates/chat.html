@@ -1,0 +1,12 @@
+<ion-view view-title="Group Chat">
+    <ion-content class="padding">
+        <ion-list >
+            <ion-item ng-repeat="item in items" item="item" href="#/tab/chat/{{item.id}}" class="item-remove-animate">
+                Title: {{ item.title }} ：Organizer {{item.organizer}}
+                <ion-option-button class="button-assertive" ng-click="edit(item)">
+                    Quit
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

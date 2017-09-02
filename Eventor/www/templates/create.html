@@ -1,0 +1,42 @@
+<ion-view view-title="Create Event">
+    <ion-content class="padding">
+        <div class="list card">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Category</span>
+                <button class="button button-light button-full button-block " ng-click="showCategory()" >{{data.category}}</button>
+        
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Title</span>
+                <input type="text" placeholder=""  ng-model="data.title" required>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Organizer</span>
+                <input type="text" placeholder="" ng-model="data.organizer" required>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Location</span>
+                <input type="text" placeholder="" ng-model="data.location" required>
+            </label>
+            <label class="item item-input item-stacked-label">
+                        <span class="input-label">Date and Time</span>
+                        <input type="text" placeholder="" ng-model="data.start">
+                    </label>
+            <label class="item item-input item-stacked-label">
+                        <span class="input-label">Participant No</span>
+                        <input type="text" placeholder="" ng-model="data.max" required>
+                    </label>
+            <label class="item item-input item-stacked-label">
+                        <span class="input-label">Description</span>
+                        <textarea placeholder="Description" ng-model="data.description" required></textarea>
+                    </label>
+            <label class="item item-input item-stacked-label">
+                        <span class="input-label">Poster</span>
+                        <input type="file" >
+                    </label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive" ng-click="publish()">Submit</button>
+        </div>
+    </ion-content>
+</ion-view>
